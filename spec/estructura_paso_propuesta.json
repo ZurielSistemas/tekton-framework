@@ -1,0 +1,22 @@
+{
+  "propuestaPaso": {
+    "paso_referenciado": 3,
+    "nombre_paso": "Modelo de Negocio",
+    "fecha_generacion": "2025-06-22",
+    "tipo_propuesta": "diagnóstico | implementación | formación | otro",
+    "contenido": {
+      "resumen": "Diseño de modelo de negocio utilizando Business Model Canvas adaptado.",
+      "entregables": [
+        "canvas_modelo_negocio.pdf",
+        "informe_diagnostico.docx"
+      ],
+      "plazo_estimado": "5 días",
+      "costo_estimado": 120,
+      "condiciones": [
+        "50% adelantado",
+        "50% contra entrega"
+      ]
+    },
+    "estado_cliente": "pendiente_aprobacion | aprobado | rechazado"
+  }
+}
