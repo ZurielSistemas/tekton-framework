@@ -1,0 +1,20 @@
+{
+  "nomenclatura_tekton_zuriel": {
+    "descripcion": "Convenciones de nombres para archivos, carpetas, elementos y estructuras dentro del Framework Tekton de Zuriel Sistemas.",
+
+    "reglas_generales": {
+      "idioma": "español (acentos omitidos, todo en minúsculas)",
+      "separadores": "guiones bajos (_) para archivos; guiones (-) para carpetas",
+      "mayusculas": "no usar; todo en minúsculas",
+      "extensiones": "usar siempre .json para estructuras; .md para documentación"
+    },
+
+    "nombres_por_elemento": {
+      "camino": "camino_[nombre_activador]_[descripcion_breve].json",
+      "paquete": "paquete_[nombre_logico].json",
+      "paso": "paso_[funcion]_[descripcion_breve].json",
+      "actividad": "actividad_[accion]_[descripcion_breve].json",
+      "plantilla": "plantilla_[tipo_elemento].json"
+    }
+  }
+}
