@@ -1,0 +1,14 @@
+{
+  "comando": "InicioCamino",
+  "descripcion": "Carga un camino desde el repositorio según el activador. Instancia el proyecto, presenta sus pasos y queda listo para avanzar.",
+  "buscar_plantilla_en": "repo/caminos/activador_{activador}/",
+  "estructura_esperada": "spec/estructura_camino_base.json",
+  "acciones": [
+    "Leer plantilla del camino",
+    "Validar estructura contra spec",
+    "Instanciar Camino con estado 'En proceso'",
+    "Mostrar información general del camino (nombre, activador, fecha_inicio, responsable)",
+    "Mostrar pasos en tabla",
+    "Esperar nuevos comandos"
+  ]
+}
