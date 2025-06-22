@@ -22,6 +22,10 @@
         "equivalente_google": "Task",
         "descripcion": "Etapa funcional con propósito claro, función de negocio y actividades definidas."
       },
+      "PropuestaPaso": {
+        "equivalente_google": "Pre-Task Plan",
+        "descripcion": "Estructura previa a la ejecución del paso, donde se define la propuesta técnica, económica y de entregables hacia el cliente."
+      },
       "InicioPaso": {
         "equivalente_google": "TaskRun",
         "descripcion": "Inicio formal de un paso dentro de un Camino, que puede registrar propósito, actividades y entregables."
