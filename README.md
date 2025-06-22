@@ -35,12 +35,11 @@ tekton-framework/
 
 ---
 
-## 🧩 Estructura lógica del Framework Tekton
-
 | Elemento            | Equivalente Tekton (Google) | Descripción                                               |
 |---------------------|-----------------------------|-----------------------------------------------------------|
 | Activador           | `Trigger`                   | Origen espiritual o estratégico del proceso               |
 | Camino              | `Pipeline`                  | Ruta completa de transformación                           |
+| Paquete             | `TaskGroup (conceptual)`    | Conjunto lógico de pasos relacionados dentro de un Camino |
 | Paso                | `Task`                      | Etapa funcional con propósito claro                       |
 | Actividad           | `Step`                      | Acción puntual dentro de un paso                          |
 | **InicioCamino**    | `PipelineRun`               | Instancia viva de ejecución de un Camino en un proyecto   |
