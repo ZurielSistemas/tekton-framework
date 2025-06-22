@@ -46,15 +46,6 @@ tekton-framework/
 | Repositorio        | `Resources`                 | Recursos reutilizables y plantillas del sistema |
 | Espacio de Trabajo | `Workspace`                 | Contenedor del proyecto o instancia activa      |
 
----
-
-## 📌 Próximos pasos esperados
-
-- Incorporar `modelo.json` en la carpeta `spec/`
-- Desplegar carpetas internas en `repo/`:
-  - `plantillas/`, `caminos/`, `pasos/`, `actividades/`
-- Agregar documentación extendida en `docs/`
-- Establecer índices y convenciones en `meta/`
 
 ---
 
