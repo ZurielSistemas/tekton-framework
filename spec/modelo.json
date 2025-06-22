@@ -1,0 +1,47 @@
+{
+  "framework_tekton_zuriel": {
+    "descripcion": "Modelo estructural del Framework Tekton de Zuriel Sistemas, inspirado en el Tekton de Google, adaptado a procesos humanos, espirituales y organizacionales.",
+    "elementos_principales": {
+      "Activador": {
+        "equivalente_google": "Trigger",
+        "descripcion": "Motivación o evento que inicia el Camino. Puede ser espiritual, estratégica o contextual."
+      },
+      "Camino": {
+        "equivalente_google": "Pipeline",
+        "descripcion": "Ruta compuesta por pasos secuenciales y estratégicos hacia una transformación con propósito."
+      },
+      "InicioCamino": {
+        "equivalente_google": "PipelineRun",
+        "descripcion": "Instancia específica de ejecución de un Camino en un proyecto real."
+      },
+      "Paquete": {
+        "equivalente_google": "TaskGroup (conceptual)",
+        "descripcion": "Conjunto lógico de pasos relacionados que pueden representar una fase, módulo o bloque funcional dentro de un Camino."
+      },
+      "Paso": {
+        "equivalente_google": "Task",
+        "descripcion": "Etapa funcional con propósito claro, función de negocio y actividades definidas."
+      },
+      "InicioPaso": {
+        "equivalente_google": "TaskRun",
+        "descripcion": "Inicio formal de un paso dentro de un Camino, que puede registrar propósito, actividades y entregables."
+      },
+      "Actividad": {
+        "equivalente_google": "Step",
+        "descripcion": "Acción concreta, ejecutable y medible dentro de un Paso. Unidad mínima de avance."
+      },
+      "InicioActividad": {
+        "equivalente_google": "StepRun",
+        "descripcion": "Registro de ejecución de una Actividad puntual con resultado o entregable."
+      },
+      "Espacio de Trabajo": {
+        "equivalente_google": "Workspace",
+        "descripcion": "Entorno donde se despliega un proyecto completo, contenedor del Camino y su ejecución."
+      },
+      "Repositorio": {
+        "equivalente_google": "Resources",
+        "descripcion": "Conjunto estructurado de plantillas, caminos sugeridos, documentación y ejemplos que alimentan el proceso Tekton."
+      }
+    }
+  }
+}
