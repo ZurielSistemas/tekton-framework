@@ -1,0 +1,68 @@
+{
+  "estructura_camino_base": {
+    "descripcion": "Estructura mínima y recomendada para definir un Camino Tekton completo en Zuriel Sistemas.",
+    "requisitos": {
+      "activador": {
+        "tipo": "string",
+        "descripcion": "Tipo de activador que origina el camino (ej. startup, vocacional, reconversion)."
+      },
+      "nombre": {
+        "tipo": "string",
+        "descripcion": "Nombre del camino Tekton."
+      },
+      "estado_general": {
+        "tipo": "string",
+        "valores_permitidos": ["No iniciado", "En proceso", "Finalizado", "Cancelado"]
+      },
+      "paquetes": {
+        "tipo": "array",
+        "descripcion": "Lista opcional de agrupaciones de pasos relacionados.",
+        "contenido": {
+          "nombre": "string",
+          "descripcion": "string",
+          "pasos": "array"
+        }
+      },
+      "pasos": {
+        "tipo": "array",
+        "descripcion": "Lista de pasos numerados con propósito, función y estado.",
+        "estructura": {
+          "numero": "integer",
+          "nombre": "string",
+          "funcion": {
+            "tipo": "string",
+            "descripcion": "Área funcional que ejecuta el paso.",
+            "referencia": "spec/funciones.json -> funciones_validas"
+          },
+          "estado": "No iniciado | En proceso | Finalizado",
+          "propuestaPaso": {
+            "tipo": "object",
+            "opcional": true,
+            "estructura": {
+              "fecha_generacion": "YYYY-MM-DD",
+              "resumen": "string",
+              "entregables": ["string"],
+              "costo_estimado": "number",
+              "estado_cliente": "pendiente_aprobacion | aprobado | rechazado"
+            }
+          },
+          "inicioPaso": {
+            "proposito": "string",
+            "contexto_estrategico": "string",
+            "principios_tekton": ["string"],
+            "frase_guia": "string"
+          },
+          "actividades": {
+            "tipo": "array",
+            "estructura": {
+              "nombre": "string",
+              "descripcion": "string",
+              "estado": "Pendiente | En ejecución | Hecha",
+              "entregable": "string (opcional)"
+            }
+          }
+        }
+      }
+    }
+  }
+}
