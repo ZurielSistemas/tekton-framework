@@ -37,14 +37,17 @@ tekton-framework/
 
 ## 🧩 Estructura lógica del Framework Tekton
 
-| Elemento           | Equivalente Tekton (Google) | Descripción                                     |
-|--------------------|-----------------------------|-------------------------------------------------|
-| Activador          | `Trigger`                   | Origen espiritual o estratégico del proceso     |
-| Camino             | `Pipeline`                  | Ruta completa de transformación                 |
-| Paso               | `Task`                      | Etapa funcional con propósito claro             |
-| Actividad          | `Step`                      | Acción puntual dentro de un paso                |
-| Repositorio        | `Resources`                 | Recursos reutilizables y plantillas del sistema |
-| Espacio de Trabajo | `Workspace`                 | Contenedor del proyecto o instancia activa      |
+| Elemento            | Equivalente Tekton (Google) | Descripción                                               |
+|---------------------|-----------------------------|-----------------------------------------------------------|
+| Activador           | `Trigger`                   | Origen espiritual o estratégico del proceso               |
+| Camino              | `Pipeline`                  | Ruta completa de transformación                           |
+| Paso                | `Task`                      | Etapa funcional con propósito claro                       |
+| Actividad           | `Step`                      | Acción puntual dentro de un paso                          |
+| **InicioCamino**    | `PipelineRun`               | Instancia viva de ejecución de un Camino en un proyecto   |
+| **InicioPaso**      | `TaskRun`                   | Registro e inicio formal de un Paso dentro del Camino     |
+| **InicioActividad** | `StepRun`                   | Ejecución concreta de una Actividad puntual               |
+| Repositorio         | `Resources`                 | Recursos reutilizables y plantillas del sistema           |
+| Espacio de Trabajo  | `Workspace`                 | Contenedor del proyecto o instancia activa                |
 
 
 ---
