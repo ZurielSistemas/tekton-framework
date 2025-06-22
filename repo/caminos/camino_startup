@@ -1,0 +1,33 @@
+{
+  "camino": {
+    "nombre": "camino_startup",
+    "activador": "startup",
+    "estado_general": "No iniciado",
+    "pasos": [
+      {
+        "numero": 1,
+        "nombre": "Diagnóstico Estratégico",
+        "funcion": "Dirección",
+        "estado": "No iniciado"
+      },
+      {
+        "numero": 2,
+        "nombre": "Modelado de Identidad",
+        "funcion": "Dirección",
+        "estado": "No iniciado"
+      },
+      {
+        "numero": 3,
+        "nombre": "Diseño de Producto",
+        "funcion": "Operaciones",
+        "estado": "No iniciado"
+      },
+      {
+        "numero": 4,
+        "nombre": "Campaña de Lanzamiento",
+        "funcion": "Mercadeo",
+        "estado": "No iniciado"
+      }
+    ]
+  }
+}
