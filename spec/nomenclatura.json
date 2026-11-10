@@ -1,20 +1,37 @@
 {
-  "nomenclatura_tekton_zuriel": {
-    "descripcion": "Convenciones de nombres para archivos, carpetas, elementos y estructuras dentro del Framework Tekton de Zuriel Sistemas.",
-
-    "reglas_generales": {
-      "idioma": "español (acentos omitidos, todo en minúsculas)",
-      "separadores": "guiones bajos (_) para archivos; guiones (-) para carpetas",
-      "mayusculas": "no usar; todo en minúsculas",
-      "extensiones": "usar siempre .json para estructuras; .md para documentación"
+  "nomenclatura_tekton": {
+    "descripcion": "Los códigos de la metodología Tekton. Van por cliente: cada empresa o persona tiene los suyos. Los números del camino y del activador llevan al menos dos cifras.",
+    "codigos": {
+      "frente": {
+        "formato": "{n}, desde 0",
+        "ejemplo": "0, 1, 2",
+        "regla": "El 0 es siempre la dirección del cliente."
+      },
+      "camino": {
+        "formato": "{frente}C-{nn}",
+        "ejemplo": "1C-01",
+        "regla": "El número de su frente, una C y su número dentro del frente. Solo cambia de frente mientras está propuesto, y entonces cambian su código y el de sus pasos."
+      },
+      "paso": {
+        "formato": "{camino}.{n}",
+        "ejemplo": "1C-01.2",
+        "regla": "El código de su camino y su número. No cambia si el paso pasa a otro tramo."
+      },
+      "tramo": {
+        "formato": "T{n}",
+        "ejemplo": "T1",
+        "regla": "Es una etiqueta del paso dentro de su camino: no va dentro del código del paso."
+      },
+      "activador": {
+        "formato": "AC-{nn}",
+        "ejemplo": "AC-01",
+        "regla": "Uno por camino, numerados por cliente."
+      }
     },
-
-    "nombres_por_elemento": {
-      "camino": "camino_[nombre_activador]_[descripcion_breve].json",
-      "paquete": "paquete_[nombre_logico].json",
-      "paso": "paso_[funcion]_[descripcion_breve].json",
-      "actividad": "actividad_[accion]_[descripcion_breve].json",
-      "plantilla": "plantilla_[tipo_elemento].json"
+    "escritura": {
+      "nivel": "Escribe siempre «nivel Orden», para no confundirlo con la secuencia de los pasos.",
+      "catalogo": "Di «catálogo de pasos tipo», para no confundirlo con un catálogo de servicios con precios.",
+      "tactico": "A lo táctico (proyectos, planes de trabajo y trabajos) no se le llama camino, tramo ni paso."
     }
   }
 }

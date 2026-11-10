@@ -1,4 +1,12 @@
 {
+  "niveles": {
+    "descripcion": "El nivel es de cada paso: un camino puede cruzar los tres, y un tramo no es un nivel. Escribe siempre «nivel Orden», para no confundirlo con la secuencia de los pasos.",
+    "valores": [
+      { "nivel": "Gobierno", "clave": "gobierno", "cubre": "El rumbo y la información" },
+      { "nivel": "Orden", "clave": "orden", "cubre": "Los procesos y los recursos" },
+      { "nivel": "Ejecución", "clave": "ejecucion", "cubre": "Las iniciativas concretas" }
+    ]
+  },
   "funciones_validas": [
     "Dirección",
     "Mercadeo",

@@ -1,51 +1,122 @@
 {
-  "framework_tekton_zuriel": {
-    "descripcion": "Modelo estructural del Framework Tekton de Zuriel Sistemas, inspirado en el Tekton de Google, adaptado a procesos humanos, espirituales y organizacionales.",
-    "elementos_principales": {
-      "Activador": {
-        "equivalente_google": "Trigger",
-        "descripcion": "Motivación o evento que inicia el Camino. Puede ser espiritual, estratégica o contextual."
+  "framework_tekton": {
+    "descripcion": "Modelo de la metodología Tekton de Zuriel Sistemas: sus piezas, sus estados, los motivos de una activación y sus reglas. Solo la metodología: sin pasos concretos, sin plantillas y sin datos de clientes. Sirve para empresas y para personas.",
+    "filosofia": "Cada transformación parte del reconocimiento de un llamado. Tekton une propósito, orden y entrega real; el criterio que manda es encontrar la mejor dirección al menor costo.",
+    "cadena": ["señal", "activador", "camino", "destino", "tramo", "paso", "dependencia", "trabajo"],
+    "fuera_de_tekton": "Lo táctico: cada proyecto, con sus planes de trabajo y sus trabajos (quién, cuándo y con cuántos créditos). La propuesta, con su precio, es de un proyecto, que puede juntar pasos de varios caminos. Cada trabajo dice qué pasos hace avanzar y reparte sus créditos entre ellos (en partes iguales salvo otro reparto).",
+    "piezas": {
+      "senal": {
+        "que_es": "El hecho que dispara el trabajo, con su fecha, quién la trajo y qué tan urgente es.",
+        "equivalente_tekton": "Trigger",
+        "ejemplo": "Un sistema del cliente que se corta esta semana"
       },
-      "Camino": {
-        "equivalente_google": "Pipeline",
-        "descripcion": "Ruta compuesta por pasos secuenciales y estratégicos hacia una transformación con propósito."
+      "frente": {
+        "que_es": "Una línea del cliente, con el nombre que usa el cliente. Se numeran desde 0 y el 0 es siempre la dirección del cliente. Cada frente guarda sus caminos y tiene su responsable del lado del cliente. Puede haber frentes compartidos para que el 0 no se vuelva un cajón.",
+        "ejemplo": "0 Dirección, 1 Tienda, 2 Administración"
       },
-      "InicioCamino": {
-        "equivalente_google": "PipelineRun",
-        "descripcion": "Instancia específica de ejecución de un Camino en un proyecto real."
+      "activador": {
+        "que_es": "El llamado de un camino (uno por camino): la señal de origen, el destino y el documento que le propone el camino al cliente. Su documento va por versiones, sin precios.",
+        "ejemplo": "AC-01"
       },
-      "Paquete": {
-        "equivalente_google": "TaskGroup (conceptual)",
-        "descripcion": "Conjunto lógico de pasos relacionados que pueden representar una fase, módulo o bloque funcional dentro de un Camino."
+      "activacion": {
+        "que_es": "Cada decisión del cliente sobre un camino, aceptada o rechazada, hasta el tramo que diga, con la señal de ese momento, la versión del activador que vio, quién decidió, por dónde y cuándo. No cambia.",
+        "ejemplo": "Activar 1C-01 hasta el T1"
       },
-      "Paso": {
-        "equivalente_google": "Task",
-        "descripcion": "Etapa funcional con propósito claro, función de negocio y actividades definidas."
+      "camino": {
+        "que_es": "Una capacidad que gana la organización, con un destino. Va en un frente y puede cruzar los tres niveles.",
+        "equivalente_tekton": "Pipeline",
+        "ejemplo": "1C-01 Atención con agentes"
       },
-      "PropuestaPaso": {
-        "equivalente_google": "Pre-Task Plan",
-        "descripcion": "Estructura previa a la ejecución del paso, donde se define la propuesta técnica, económica y de entregables hacia el cliente."
+      "destino": {
+        "que_es": "Cómo opera la organización cuando el camino termina. No cambia: si cambia, es otro camino.",
+        "ejemplo": "Cada unidad atiende a sus clientes con su agente"
       },
-      "InicioPaso": {
-        "equivalente_google": "TaskRun",
-        "descripcion": "Inicio formal de un paso dentro de un Camino, que puede registrar propósito, actividades y entregables."
+      "tramo": {
+        "que_es": "Una etapa de progresión del camino que agrupa pasos, nombrada por su logro. El cliente activa el camino tramo a tramo.",
+        "ejemplo": "T1 Interesados atendidos por el agente"
       },
-      "Actividad": {
-        "equivalente_google": "Step",
-        "descripcion": "Acción concreta, ejecutable y medible dentro de un Paso. Unidad mínima de avance."
+      "paso": {
+        "que_es": "Un logro con su nivel, su función, sus créditos estimados y un solo resultado verificable. Su secuencia es una sugerencia.",
+        "equivalente_tekton": "Task",
+        "ejemplo": "1C-01.2 Citas agendadas por el agente"
       },
-      "InicioActividad": {
-        "equivalente_google": "StepRun",
-        "descripcion": "Registro de ejecución de una Actividad puntual con resultado o entregable."
+      "nivel": {
+        "que_es": "El de cada paso: Gobierno, Orden o Ejecución.",
+        "referencia": "spec/funciones.json -> niveles"
       },
-      "Espacio de Trabajo": {
-        "equivalente_google": "Workspace",
-        "descripcion": "Entorno donde se despliega un proyecto completo, contenedor del Camino y su ejecución."
+      "funcion": {
+        "que_es": "La función de negocio del paso.",
+        "referencia": "spec/funciones.json -> funciones_validas"
       },
-      "Repositorio": {
-        "equivalente_google": "Resources",
-        "descripcion": "Conjunto estructurado de plantillas, caminos sugeridos, documentación y ejemplos que alimentan el proceso Tekton."
+      "dependencia": {
+        "que_es": "Lo que un paso necesita de otro paso, o de un tramo completo (todos sus pasos cumplidos u omitidos). Nunca en círculo.",
+        "tipos": {
+          "dura": "Bloquea el paso hasta que lo otro se cumpla.",
+          "blanda": "Deja avanzar con el riesgo de retrabajo escrito, si el cliente lo asume en una activación."
+        },
+        "ejemplo": "1C-01.2 depende (dura) de 0C-01.3"
+      },
+      "bloqueo": {
+        "que_es": "El estado de un paso con una dependencia dura sin cumplir. Muestra qué lo bloquea, aunque sea de otro frente. No se pone a mano: sale de las dependencias.",
+        "ejemplo": "1C-01.2 bloqueado por 0C-01.3"
+      },
+      "insumo": {
+        "que_es": "Una sesión o un formulario con el cliente que alimenta uno o varios pasos.",
+        "ejemplo": "Sesión con el equipo directivo"
+      },
+      "creditos_estimados": {
+        "que_es": "El esfuerzo estimado de un paso, en créditos. El cliente los ve para comparar pasos y caminos y decidir la dirección. Son una estimación, no un precio ni un compromiso: lo que se consume sale de los trabajos. Al cerrar el paso se comparan con los reales.",
+        "ejemplo": "6 créditos"
+      },
+      "paso_tipo": {
+        "que_es": "Un paso del catálogo de pasos tipo, ordenado por niveles y funciones. Su resultado no cambia y todo lo demás mejora por versiones: si cambia el resultado, es otro paso tipo.",
+        "ejemplo": "Proceso de cobranza documentado"
+      },
+      "plantilla_de_camino": {
+        "que_es": "El recorrido guardado de un camino real que funcionó."
       }
+    },
+    "estados": {
+      "activacion": ["aceptada", "rechazada"],
+      "camino": {
+        "valores": ["propuesto", "activo", "finalizado", "cancelado"],
+        "reglas": "Nace propuesto y pasa a activo solo con una activación aceptada. Finalizado vuelve a activo con la activación mejorar. Se cancela desde propuesto o activo."
+      },
+      "paso": {
+        "valores": ["sugerido", "activo", "bloqueado", "cumplido", "omitido"],
+        "reglas": "Solo se activa en un tramo que el cliente activó. Bloqueado sale de sus dependencias duras. Cumplido cuando se confirma su resultado, y desde ahí queda fijo."
+      },
+      "paso_tipo": {
+        "valores": ["borrador", "vigente", "archivado"],
+        "reglas": "Entra como borrador cuando arranca el primer paso que lo usa y queda vigente (fijo, con su historia) cuando ese paso se cumple."
+      }
+    },
+    "motivos_activacion": {
+      "activar": "Un camino propuesto, hasta un tramo.",
+      "continuar": "Un camino activo, hasta un tramo después del último activado.",
+      "presentar_de_nuevo": "Un camino propuesto, después de un rechazo.",
+      "asumir_riesgo": "El de una dependencia blanda sin cumplir. En el camino del diagnóstico, en el frente 0, una sola activación puede asumirlo para todos los caminos del cliente.",
+      "mejorar": "Un camino finalizado: vuelve a activo, con el mismo destino y un tramo más."
+    },
+    "formato_activador": [
+      "La señal, contada en el idioma del cliente.",
+      "El destino.",
+      "Los tramos con su logro y sus pasos: qué logra cada uno, su nivel, su función y sus créditos estimados, con el total de cada tramo.",
+      "Qué lo bloquea: los pasos de los que depende, aunque sean de otro frente, con sus créditos estimados, y el riesgo de las dependencias blandas.",
+      "Lo que se necesita: plataformas y recursos.",
+      "Para activarlo: lo que pone el cliente (responsable, datos, momento de arranque) y hasta qué tramo se propone llegar ahora."
+    ],
+    "reglas": {
+      "tamano": "Un paso tiene un solo resultado verificable. Si tiene dos, son dos pasos.",
+      "sentido": "El resultado de un paso tipo y el destino de un camino no cambian; lo demás mejora por versiones.",
+      "sin_precios": "El activador no lleva precios: los créditos van como estimación y el precio va en la propuesta de un proyecto. Cada cambio es una versión nueva, que se aprueba antes de que la vea el cliente.",
+      "lo_minimo": "Se proponen solo los pasos que destraban la señal, y lo mínimo de cada uno.",
+      "primero_el_catalogo": "Antes de proponer un paso se busca un paso tipo que sirva; si sirve, el paso parte de él y se anota qué se adapta.",
+      "lo_que_vio_el_cliente": "A un tramo activado no entran pasos nuevos, y el resultado y los créditos estimados de sus pasos no cambian.",
+      "destrabar": "Destrabar un paso bloqueado es activar el activador del camino que lo bloquea.",
+      "cierre_de_paso": "Al cumplirlo u omitirlo se anota de qué paso tipo partió (o si es nuevo), qué se adaptó, el resultado obtenido (o por qué se omitió), una lección corta y los créditos reales.",
+      "cierre_de_camino": "Todos sus pasos cumplidos u omitidos, con un resumen final y las lecciones aprendidas. Si funcionó, puede guardarse como plantilla de camino.",
+      "lo_que_ve_el_cliente": "Su matriz de niveles por frentes, con cada camino en su color y los créditos de cada paso, estimados y consumidos. Solo lo aprobado; cada responsable ve su frente y la dirección los ve todos."
     }
   }
 }
